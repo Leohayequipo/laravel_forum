@@ -1,0 +1,59 @@
+//instalar laravel
+laravel new forum
+
+//instalar 
+breeze
+composer require laravel/breeze --dev
+
+php artisan breeze:install
+
+//creo las bases
+Desde mysql
+
+//migro
+php artisan migrate
+
+//instalar componentes
+
+cuando agrego clases tailwind 
+necesito correr el 
+comando npm run dev
+
+//livewire laivvwaiger
+instalar
+composer require livewire/livewire
+
+ir a las plantillas view-layouts-app.blade
+y meter las directivas
+
+@livewireStyles
+
+@livewireScripts
+
+despues crear componente
+php artisan make:livewire show-threads
+crea en la vista y en app
+
+un componente se divide en dos la parte de la vista y la parte de la Logica
+
+
+//crear entidad de categoria
+php artisan make:model Category -mf
+
+crea el modelo, factory y migracion
+//migrate es la representacion de la tabla
+agrego los campos en database-migrations-tabla
+
+//factory  model de datos/datos falsos
+factory //datos falsos 
+
+//seeders semillas
+
+desde terminar corro el refresh de tablas y seeders
+php artisa migrate:refresh --seed
+
+
+///**hacer consulta**////
+La consulta la hago en el componente del lado de php
+livewire-ShowThreads
+Pasa eso hay que agregar el manespace de la entidad de Category (hacer un include del modelo catogoria)
