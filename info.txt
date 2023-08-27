@@ -67,3 +67,13 @@ mf
 
 //funcion fecha 
 <span>{{$thread->created_at->diffForHumans()}}</span>
+
+//creo las Respuestas
+php artisan make:model Reply -mf
+modelo 
+factory 
+migracion
+//
+trabajo con la tabla
+trabajo con el factory
+trabajo con la semillas
