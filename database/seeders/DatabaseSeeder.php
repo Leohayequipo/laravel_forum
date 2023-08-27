@@ -10,12 +10,14 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
+    //el sistema va a buscar esta relacion   ->hasThreads(20)
     public function run(): void
     {
          \App\Models\User::factory()->create(['email'=>'lic.mannanice@gmail.com']);
          \App\Models\User::factory(9)->create();
-
-         \App\Models\Category::factory(10)->create();
+         \App\Models\Category::factory(10)
+         ->hasThreads(20)
+         ->create();
 
 
         // \App\Models\User::factory()->create([

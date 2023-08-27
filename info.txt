@@ -57,3 +57,13 @@ php artisa migrate:refresh --seed
 La consulta la hago en el componente del lado de php
 livewire-ShowThreads
 Pasa eso hay que agregar el manespace de la entidad de Category (hacer un include del modelo catogoria)
+
+
+//tabla preguntas
+creo el modelo el factory y la migracion
+ php artisan make:model Thread -
+mf
+
+
+//funcion fecha 
+<span>{{$thread->created_at->diffForHumans()}}</span>
