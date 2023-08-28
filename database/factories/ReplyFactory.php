@@ -19,7 +19,7 @@ class ReplyFactory extends Factory
         return [
             'thread_id'=>rand(1,200),
             'user_id'=>rand(1,10),
-            'body'=>fake()->text(),
+            'body'=>fake()->text()
 
 
         ];

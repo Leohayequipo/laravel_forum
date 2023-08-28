@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('replies', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('reply_id');
+            $table->unsignedBigInteger('reply_id')->nullable();
             $table->foreign('reply_id')
             ->references('id')
             ->on('replies')
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->foreign('thread_id')
             ->references('id')
             ->on('threads')
-            ->onDelete('casacade');
+            ->onDelete('cascade');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
