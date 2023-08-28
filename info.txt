@@ -73,7 +73,7 @@ php artisan make:model Reply -mf
 modelo 
 factory 
 migracion
-//
+// 
 trabajo con la tabla
 trabajo con el factory
 trabajo con la semillas
@@ -81,3 +81,17 @@ trabajo con la semillas
 //
 cuando queremos que importe desde 0
 php artisan migrate:fresh --seed
+
+/diseño propiedad consulta
+nombre propiedad    
+<input 
+    type="text" 
+    placeholder="Buscar" 
+    class="bg-slate-800 border-0 rounded-md w-1/3 p-3 text-white/60 text-xs"
+    wire:model="Search">
+el campo se conecta a una propiedad con este nombre
+
+//Atributo propio del componente- Reaccion ante click
+wire:click.prevent="" 
+
+wire:click.prevent="filterByCategory('{{$category->id}}')" 
