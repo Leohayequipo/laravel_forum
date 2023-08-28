@@ -94,4 +94,4 @@ el campo se conecta a una propiedad con este nombre
 //Atributo propio del componente- Reaccion ante click
 wire:click.prevent="" 
 
-wire:click.prevent="filterByCategory('{{$category->id}}')" 
+wire:click.prevent="filterByCategory('{{$category->id}}')" .
