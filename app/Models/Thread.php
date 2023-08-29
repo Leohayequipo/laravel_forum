@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Thread extends Model
 {
     use HasFactory;
-    //user-avatar
-    //una pregunta pertenece a un usuario
+    
     public function category(){
         return $this->belongsTo(Category::class);
     }

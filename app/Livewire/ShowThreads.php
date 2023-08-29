@@ -12,6 +12,11 @@ class ShowThreads extends Component
   
     //nueva propiedad
     public $category = "";
+
+    
+    public function postSearch(){
+       
+    }
     //metodo para click
     public function filterByCategory($category){
         $this->category = $category;

@@ -23,12 +23,12 @@
     </div>
     <div class="w-full">
         <!-- Formulario -->
-        <form class="mb-4" >
+        <form wire:submit.prevent="postSearch" class="mb-4" >
             <input 
                 type="text" 
                 placeholder="// ..." 
                 class="bg-slate-800 border-0 rounded-md w-1/3 p-3 text-white/60 text-xs"
-                wire:model="search">
+                wire:model.defer="search">
 
         </form>
        
@@ -41,7 +41,7 @@
                 </div>
                 <div class="w-full">
                     <h2 class="mb-4 flex items-start justify-between">
-                        <a href="" class="text-xl font-semibold text-white/90 ">
+                        <a href="{{route('thread',$thread)}}" class="text-xl font-semibold text-white/90 ">
                             {{$thread->title}}
                         </a>
                         <span class="rounded-full text-xs py-2 px-4 capitalize" 
