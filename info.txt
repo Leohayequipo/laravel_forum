@@ -143,3 +143,54 @@ protected $fillable = [
         'password',
     ];
 }
+
+//respuestas
+php artisan make:livewire show-reply
+
+//componente show-thread
+<!-- iterar un component -->
+    <!--  nom componente                 key unico para diferenciarlos
+        livewire('show-reply',['reply'=>$reply],key('reply-'.$reply->id))
+    -->
+    @foreach($replies as $reply)
+                                                //key unico para diferenciarlos
+        @livewire('show-reply',['reply'=>$reply],key('reply-'.$reply->id))
+
+    @endforeach   
+
+//los componentes usan los modelos para acceder a los datos
+<?php
+
+namespace App\Livewire;
+use App\Models\Reply;
+use Livewire\Component;
+
+class ShowReply extends Component
+{
+    public Reply $reply;
+    public function render()
+    {
+        return view('livewire.show-reply');
+    }
+}
+
+//los modelos indican las relaciones (belongsTo hasMany)
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Reply extends Model
+{
+    use HasFactory;
+    protected $fillable = [
+        'thread_id',
+        'body'
+    ];
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+}
+//una vista usa las variables que el componente le permite
